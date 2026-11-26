@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nova-agent
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://kkartiksharma999_db_user:kartiksharma2005@ac-syymozc-shard-00-00.nged4u6.mongodb.net:27017,ac-syymozc-shard-00-01.nged4u6.mongodb.net:27017,ac-syymozc-shard-00-02.nged4u6.mongodb.net:27017/Nova?ssl=true&replicaSet=atlas-g5piqe-shard-0&authSource=admin
+    restart: always
+    depends_on:
+      - db
+
+  db:
+    image: mongo:latest
+    container_name: mongodb-agent
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-deployment
+  template:
+      metadata:
+        labels:
+          app: app-deployment
+      spec:
+        containers:
+          - name: app
+            image: server-app:latest
+            imagePullPolicy: IfNotPresent
+            ports:
+              - containerPort: 5000
+            env:
+            - name: MONGODB_URI
+              value: "mongodb://kkartiksharma999_db_user:kartiksharma2005@ac-syymozc-shard-00-00.nged4u6.mongodb.net:27017,ac-syymozc-shard-00-01.nged4u6.mongodb.net:27017,ac-syymozc-shard-00-02.nged4u6.mongodb.net:27017/Nova?ssl=true&replicaSet=atlas-g5piqe-shard-0&authSource=admin"
