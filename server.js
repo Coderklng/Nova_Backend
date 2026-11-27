@@ -9,6 +9,7 @@ import agentRoute from './routes/agentRoute.js';
 import workflowRoute from './routes/workflowRoute.js';
 import subscriptionRoute from './routes/subscriptionRoute.js';
 import conservationRoute from './routes/conservationRoute.js';
+import chatRoute from './Routes/chatRoute.js';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/api/agents', agentRoute);
 app.use('/api/workflows', workflowRoute);
 app.use('/api/subscriptions', subscriptionRoute);
 app.use('/api/conversations', conservationRoute);
+app.use('/api', chatRoute);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });

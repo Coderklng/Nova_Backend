@@ -20,4 +20,5 @@ subscriptionRoute.get('/:id', getSubscriptionById);
 subscriptionRoute.put('/:id', updateSubscription);
 subscriptionRoute.delete('/:id', deleteSubscription);
 
+
 export default subscriptionRoute;
