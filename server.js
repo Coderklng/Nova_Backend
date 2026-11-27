@@ -9,7 +9,7 @@ import agentRoute from './routes/agentRoute.js';
 import workflowRoute from './routes/workflowRoute.js';
 import subscriptionRoute from './routes/subscriptionRoute.js';
 import conservationRoute from './routes/conservationRoute.js';
-import chatRoute from './Routes/chatRoute.js';
+import chatRoute from './routes/chatRoute.js';
 
 const app = express();
 
